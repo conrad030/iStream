@@ -7,10 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D05921F45D913CBF3CAA79 /* Pods_CommunicationFramework_CommunicationFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CD7D3F049C980C81AE3284 /* Pods_CommunicationFramework_CommunicationFrameworkTests.framework */; };
+		621DF3B4BCB93B5BA288163A /* Pods_CommunicationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26456A3E6070310ABCD87D65 /* Pods_CommunicationFramework.framework */; };
 		7A086D3A286EEDF5003E348F /* CommunicationFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D39286EEDF5003E348F /* CommunicationFramework.docc */; };
 		7A086D40286EEDF6003E348F /* CommunicationFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A086D35286EEDF5003E348F /* CommunicationFramework.framework */; };
 		7A086D45286EEDF6003E348F /* CommunicationFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D44286EEDF6003E348F /* CommunicationFrameworkTests.swift */; };
 		7A086D46286EEDF6003E348F /* CommunicationFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A086D38286EEDF5003E348F /* CommunicationFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A086D9B286EF008003E348F /* PLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D50286EF007003E348F /* PLHelper.swift */; };
+		7A086D9C286EF008003E348F /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D52286EF007003E348F /* FileType.swift */; };
+		7A086D9D286EF008003E348F /* ChatMessageStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D53286EF007003E348F /* ChatMessageStatus.swift */; };
+		7A086D9E286EF008003E348F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D55286EF007003E348F /* ImagePicker.swift */; };
+		7A086D9F286EF008003E348F /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D56286EF007003E348F /* RoundedCorners.swift */; };
+		7A086DA0286EF008003E348F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D58286EF007003E348F /* Date.swift */; };
+		7A086DA1286EF008003E348F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D59286EF007003E348F /* View.swift */; };
+		7A086DA2286EF008003E348F /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D5B286EF007003E348F /* ChatMessage.swift */; };
+		7A086DA3286EF008003E348F /* ChatMessageReadReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D5C286EF007003E348F /* ChatMessageReadReceipt.swift */; };
+		7A086DA4286EF008003E348F /* ReadReceiptReceivedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D5D286EF007003E348F /* ReadReceiptReceivedEvent.swift */; };
+		7A086DA5286EF008003E348F /* ChatMessageReceivedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D5E286EF007003E348F /* ChatMessageReceivedEvent.swift */; };
+		7A086DA6286EF008003E348F /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D5F286EF007003E348F /* Encodable.swift */; };
+		7A086DA7286EF008003E348F /* CallState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D60286EF007003E348F /* CallState.swift */; };
+		7A086DA8286EF008003E348F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D61286EF007003E348F /* UIImage.swift */; };
+		7A086DA9286EF008003E348F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D62286EF007003E348F /* HapticsManager.swift */; };
+		7A086DAA286EF008003E348F /* FileRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D65286EF007003E348F /* FileRepresentable.swift */; };
+		7A086DAB286EF008003E348F /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D66286EF007003E348F /* ChatModel.swift */; };
+		7A086DAC286EF008003E348F /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D67286EF007003E348F /* FileStorage.swift */; };
+		7A086DAD286EF008003E348F /* ReadReceiptResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D68286EF007003E348F /* ReadReceiptResponse.swift */; };
+		7A086DAE286EF008003E348F /* ReceivedChatMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D69286EF007003E348F /* ReceivedChatMessageResponse.swift */; };
+		7A086DAF286EF008003E348F /* CallingModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D6B286EF007003E348F /* CallingModelDelegate.swift */; };
+		7A086DB0286EF008003E348F /* CallingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D6C286EF007003E348F /* CallingModel.swift */; };
+		7A086DB1286EF008003E348F /* ChatModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D6E286EF007003E348F /* ChatModelDelegate.swift */; };
+		7A086DB2286EF008003E348F /* SnackBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D70286EF007003E348F /* SnackBarModifier.swift */; };
+		7A086DB3286EF008003E348F /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D72286EF007003E348F /* ChatViewModel.swift */; };
+		7A086DB4286EF008003E348F /* CallingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D73286EF007003E348F /* CallingViewModel.swift */; };
+		7A086DB5286EF008003E348F /* SnackBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D74286EF007003E348F /* SnackBarViewModel.swift */; };
+		7A086DB6286EF008003E348F /* CommunicationFramework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D75286EF007003E348F /* CommunicationFramework.docc */; };
+		7A086DB7286EF008003E348F /* AmplifyFileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D79286EF007003E348F /* AmplifyFileStorage.swift */; };
+		7A086DB8286EF008003E348F /* PDFFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D7A286EF007003E348F /* PDFFile.swift */; };
+		7A086DB9286EF008003E348F /* AzureChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D7B286EF007003E348F /* AzureChatModel.swift */; };
+		7A086DBB286EF008003E348F /* File+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D7F286EF007003E348F /* File+CoreDataClass.swift */; };
+		7A086DBC286EF008003E348F /* ChatMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D80286EF007003E348F /* ChatMessage+CoreDataClass.swift */; };
+		7A086DBD286EF008003E348F /* ChatMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D81286EF007003E348F /* ChatMessage+CoreDataProperties.swift */; };
+		7A086DBE286EF008003E348F /* File+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D82286EF007003E348F /* File+CoreDataProperties.swift */; };
+		7A086DBF286EF008003E348F /* ChatStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D83286EF007003E348F /* ChatStore.xcdatamodeld */; };
+		7A086DC0286EF008003E348F /* AzureRemoteVideoStreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D86286EF007003E348F /* AzureRemoteVideoStreamModel.swift */; };
+		7A086DC1286EF008003E348F /* AzureLocalVideoStreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D87286EF007003E348F /* AzureLocalVideoStreamModel.swift */; };
+		7A086DC2286EF008003E348F /* VideoStreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D88286EF007003E348F /* VideoStreamModel.swift */; };
+		7A086DC3286EF008003E348F /* AzureVideoStreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D89286EF007003E348F /* AzureVideoStreamModel.swift */; };
+		7A086DC4286EF008003E348F /* AzureCallingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D8A286EF007003E348F /* AzureCallingModel.swift */; };
+		7A086DC5286EF008003E348F /* CommunicationUserTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D8B286EF007003E348F /* CommunicationUserTokenModel.swift */; };
+		7A086DC7286EF008003E348F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D8F286EF007003E348F /* ChatView.swift */; };
+		7A086DC8286EF008003E348F /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D90286EF008003E348F /* MessageView.swift */; };
+		7A086DC9286EF008003E348F /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D92286EF008003E348F /* StreamView.swift */; };
+		7A086DCA286EF008003E348F /* CallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D93286EF008003E348F /* CallView.swift */; };
+		7A086DCB286EF008003E348F /* VideoStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D95286EF008003E348F /* VideoStreamView.swift */; };
+		7A086DCC286EF008003E348F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D96286EF008003E348F /* ContentView.swift */; };
+		7A086DCD286EF008003E348F /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D98286EF008003E348F /* ProviderDelegate.swift */; };
+		7A086DCE286EF008003E348F /* PushRegistryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D99286EF008003E348F /* PushRegistryDelegate.swift */; };
+		7A086DCF286EF008003E348F /* CallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D9A286EF008003E348F /* CallController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +77,68 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00CD1E72956A50C3442CA4DF /* Pods-CommunicationFramework-CommunicationFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunicationFramework-CommunicationFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-CommunicationFramework-CommunicationFrameworkTests/Pods-CommunicationFramework-CommunicationFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		26456A3E6070310ABCD87D65 /* Pods_CommunicationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommunicationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD40EA6DE725C7AF48CD01F /* Pods-CommunicationFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunicationFramework.release.xcconfig"; path = "Target Support Files/Pods-CommunicationFramework/Pods-CommunicationFramework.release.xcconfig"; sourceTree = "<group>"; };
 		7A086D35286EEDF5003E348F /* CommunicationFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommunicationFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A086D38286EEDF5003E348F /* CommunicationFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunicationFramework.h; sourceTree = "<group>"; };
 		7A086D39286EEDF5003E348F /* CommunicationFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CommunicationFramework.docc; sourceTree = "<group>"; };
 		7A086D3F286EEDF6003E348F /* CommunicationFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommunicationFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A086D44286EEDF6003E348F /* CommunicationFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationFrameworkTests.swift; sourceTree = "<group>"; };
+		7A086D50286EF007003E348F /* PLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLHelper.swift; sourceTree = "<group>"; };
+		7A086D52286EF007003E348F /* FileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
+		7A086D53286EF007003E348F /* ChatMessageStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageStatus.swift; sourceTree = "<group>"; };
+		7A086D55286EF007003E348F /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		7A086D56286EF007003E348F /* RoundedCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		7A086D58286EF007003E348F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		7A086D59286EF007003E348F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		7A086D5B286EF007003E348F /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		7A086D5C286EF007003E348F /* ChatMessageReadReceipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageReadReceipt.swift; sourceTree = "<group>"; };
+		7A086D5D286EF007003E348F /* ReadReceiptReceivedEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadReceiptReceivedEvent.swift; sourceTree = "<group>"; };
+		7A086D5E286EF007003E348F /* ChatMessageReceivedEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageReceivedEvent.swift; sourceTree = "<group>"; };
+		7A086D5F286EF007003E348F /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		7A086D60286EF007003E348F /* CallState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallState.swift; sourceTree = "<group>"; };
+		7A086D61286EF007003E348F /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		7A086D62286EF007003E348F /* HapticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		7A086D65286EF007003E348F /* FileRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRepresentable.swift; sourceTree = "<group>"; };
+		7A086D66286EF007003E348F /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		7A086D67286EF007003E348F /* FileStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		7A086D68286EF007003E348F /* ReadReceiptResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadReceiptResponse.swift; sourceTree = "<group>"; };
+		7A086D69286EF007003E348F /* ReceivedChatMessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedChatMessageResponse.swift; sourceTree = "<group>"; };
+		7A086D6B286EF007003E348F /* CallingModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallingModelDelegate.swift; sourceTree = "<group>"; };
+		7A086D6C286EF007003E348F /* CallingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallingModel.swift; sourceTree = "<group>"; };
+		7A086D6E286EF007003E348F /* ChatModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModelDelegate.swift; sourceTree = "<group>"; };
+		7A086D70286EF007003E348F /* SnackBarModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBarModifier.swift; sourceTree = "<group>"; };
+		7A086D72286EF007003E348F /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		7A086D73286EF007003E348F /* CallingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallingViewModel.swift; sourceTree = "<group>"; };
+		7A086D74286EF007003E348F /* SnackBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBarViewModel.swift; sourceTree = "<group>"; };
+		7A086D75286EF007003E348F /* CommunicationFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CommunicationFramework.docc; sourceTree = "<group>"; };
+		7A086D79286EF007003E348F /* AmplifyFileStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyFileStorage.swift; sourceTree = "<group>"; };
+		7A086D7A286EF007003E348F /* PDFFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFFile.swift; sourceTree = "<group>"; };
+		7A086D7B286EF007003E348F /* AzureChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureChatModel.swift; sourceTree = "<group>"; };
+		7A086D7F286EF007003E348F /* File+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "File+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A086D80286EF007003E348F /* ChatMessage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A086D81286EF007003E348F /* ChatMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A086D82286EF007003E348F /* File+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "File+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A086D84286EF007003E348F /* ChatStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatStore.xcdatamodel; sourceTree = "<group>"; };
+		7A086D86286EF007003E348F /* AzureRemoteVideoStreamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureRemoteVideoStreamModel.swift; sourceTree = "<group>"; };
+		7A086D87286EF007003E348F /* AzureLocalVideoStreamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureLocalVideoStreamModel.swift; sourceTree = "<group>"; };
+		7A086D88286EF007003E348F /* VideoStreamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoStreamModel.swift; sourceTree = "<group>"; };
+		7A086D89286EF007003E348F /* AzureVideoStreamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureVideoStreamModel.swift; sourceTree = "<group>"; };
+		7A086D8A286EF007003E348F /* AzureCallingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureCallingModel.swift; sourceTree = "<group>"; };
+		7A086D8B286EF007003E348F /* CommunicationUserTokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationUserTokenModel.swift; sourceTree = "<group>"; };
+		7A086D8F286EF007003E348F /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		7A086D90286EF008003E348F /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		7A086D92286EF008003E348F /* StreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
+		7A086D93286EF008003E348F /* CallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
+		7A086D95286EF008003E348F /* VideoStreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoStreamView.swift; sourceTree = "<group>"; };
+		7A086D96286EF008003E348F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A086D98286EF008003E348F /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
+		7A086D99286EF008003E348F /* PushRegistryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushRegistryDelegate.swift; sourceTree = "<group>"; };
+		7A086D9A286EF008003E348F /* CallController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallController.swift; sourceTree = "<group>"; };
+		A388D2F2F43CCBA6589B8F84 /* Pods-CommunicationFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunicationFramework.debug.xcconfig"; path = "Target Support Files/Pods-CommunicationFramework/Pods-CommunicationFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		B4CD7D3F049C980C81AE3284 /* Pods_CommunicationFramework_CommunicationFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommunicationFramework_CommunicationFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1A180A8871D2500AFF935A5 /* Pods-CommunicationFramework-CommunicationFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunicationFramework-CommunicationFrameworkTests.release.xcconfig"; path = "Target Support Files/Pods-CommunicationFramework-CommunicationFrameworkTests/Pods-CommunicationFramework-CommunicationFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621DF3B4BCB93B5BA288163A /* Pods_CommunicationFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +155,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A086D40286EEDF6003E348F /* CommunicationFramework.framework in Frameworks */,
+				21D05921F45D913CBF3CAA79 /* Pods_CommunicationFramework_CommunicationFrameworkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32D872C86D04AEA8E8467BF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A388D2F2F43CCBA6589B8F84 /* Pods-CommunicationFramework.debug.xcconfig */,
+				5FD40EA6DE725C7AF48CD01F /* Pods-CommunicationFramework.release.xcconfig */,
+				00CD1E72956A50C3442CA4DF /* Pods-CommunicationFramework-CommunicationFrameworkTests.debug.xcconfig */,
+				C1A180A8871D2500AFF935A5 /* Pods-CommunicationFramework-CommunicationFrameworkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A086D2B286EEDF5003E348F = {
 			isa = PBXGroup;
 			children = (
 				7A086D37286EEDF5003E348F /* CommunicationFramework */,
 				7A086D43286EEDF6003E348F /* CommunicationFrameworkTests */,
 				7A086D36286EEDF5003E348F /* Products */,
+				32D872C86D04AEA8E8467BF8 /* Pods */,
+				CB0858F98189D8F2C6FC1F96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +196,12 @@
 		7A086D37286EEDF5003E348F /* CommunicationFramework */ = {
 			isa = PBXGroup;
 			children = (
+				7A086D97286EF008003E348F /* CallManager */,
+				7A086D75286EF007003E348F /* CommunicationFramework.docc */,
+				7A086D4F286EF007003E348F /* Helpers */,
+				7A086D76286EF007003E348F /* Models */,
+				7A086D71286EF007003E348F /* Viewmodels */,
+				7A086D8D286EF007003E348F /* Views */,
 				7A086D38286EEDF5003E348F /* CommunicationFramework.h */,
 				7A086D39286EEDF5003E348F /* CommunicationFramework.docc */,
 			);
@@ -83,6 +214,228 @@
 				7A086D44286EEDF6003E348F /* CommunicationFrameworkTests.swift */,
 			);
 			path = CommunicationFrameworkTests;
+			sourceTree = "<group>";
+		};
+		7A086D4F286EF007003E348F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D50286EF007003E348F /* PLHelper.swift */,
+				7A086D51286EF007003E348F /* Enums */,
+				7A086D54286EF007003E348F /* ViewHelpers */,
+				7A086D57286EF007003E348F /* Extensions */,
+				7A086D62286EF007003E348F /* HapticsManager.swift */,
+				7A086D63286EF007003E348F /* Protocols */,
+				7A086D6F286EF007003E348F /* ViewModifiers */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7A086D51286EF007003E348F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D52286EF007003E348F /* FileType.swift */,
+				7A086D53286EF007003E348F /* ChatMessageStatus.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		7A086D54286EF007003E348F /* ViewHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D55286EF007003E348F /* ImagePicker.swift */,
+				7A086D56286EF007003E348F /* RoundedCorners.swift */,
+			);
+			path = ViewHelpers;
+			sourceTree = "<group>";
+		};
+		7A086D57286EF007003E348F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D58286EF007003E348F /* Date.swift */,
+				7A086D59286EF007003E348F /* View.swift */,
+				7A086D5A286EF007003E348F /* Azure */,
+				7A086D5F286EF007003E348F /* Encodable.swift */,
+				7A086D60286EF007003E348F /* CallState.swift */,
+				7A086D61286EF007003E348F /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7A086D5A286EF007003E348F /* Azure */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D5B286EF007003E348F /* ChatMessage.swift */,
+				7A086D5C286EF007003E348F /* ChatMessageReadReceipt.swift */,
+				7A086D5D286EF007003E348F /* ReadReceiptReceivedEvent.swift */,
+				7A086D5E286EF007003E348F /* ChatMessageReceivedEvent.swift */,
+			);
+			path = Azure;
+			sourceTree = "<group>";
+		};
+		7A086D63286EF007003E348F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D64286EF007003E348F /* Chat */,
+				7A086D6A286EF007003E348F /* VideoCall */,
+				7A086D6D286EF007003E348F /* Delegates */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7A086D64286EF007003E348F /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D65286EF007003E348F /* FileRepresentable.swift */,
+				7A086D66286EF007003E348F /* ChatModel.swift */,
+				7A086D67286EF007003E348F /* FileStorage.swift */,
+				7A086D68286EF007003E348F /* ReadReceiptResponse.swift */,
+				7A086D69286EF007003E348F /* ReceivedChatMessageResponse.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		7A086D6A286EF007003E348F /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D6B286EF007003E348F /* CallingModelDelegate.swift */,
+				7A086D6C286EF007003E348F /* CallingModel.swift */,
+			);
+			path = VideoCall;
+			sourceTree = "<group>";
+		};
+		7A086D6D286EF007003E348F /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D6E286EF007003E348F /* ChatModelDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		7A086D6F286EF007003E348F /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D70286EF007003E348F /* SnackBarModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		7A086D71286EF007003E348F /* Viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D72286EF007003E348F /* ChatViewModel.swift */,
+				7A086D73286EF007003E348F /* CallingViewModel.swift */,
+				7A086D74286EF007003E348F /* SnackBarViewModel.swift */,
+			);
+			path = Viewmodels;
+			sourceTree = "<group>";
+		};
+		7A086D76286EF007003E348F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D77286EF007003E348F /* Chat */,
+				7A086D85286EF007003E348F /* VideoCall */,
+				7A086D8B286EF007003E348F /* CommunicationUserTokenModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A086D77286EF007003E348F /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D78286EF007003E348F /* FileStorage */,
+				7A086D7B286EF007003E348F /* AzureChatModel.swift */,
+				7A086D7E286EF007003E348F /* Store */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		7A086D78286EF007003E348F /* FileStorage */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D79286EF007003E348F /* AmplifyFileStorage.swift */,
+				7A086D7A286EF007003E348F /* PDFFile.swift */,
+			);
+			path = FileStorage;
+			sourceTree = "<group>";
+		};
+		7A086D7E286EF007003E348F /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D7F286EF007003E348F /* File+CoreDataClass.swift */,
+				7A086D80286EF007003E348F /* ChatMessage+CoreDataClass.swift */,
+				7A086D81286EF007003E348F /* ChatMessage+CoreDataProperties.swift */,
+				7A086D82286EF007003E348F /* File+CoreDataProperties.swift */,
+				7A086D83286EF007003E348F /* ChatStore.xcdatamodeld */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		7A086D85286EF007003E348F /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D86286EF007003E348F /* AzureRemoteVideoStreamModel.swift */,
+				7A086D87286EF007003E348F /* AzureLocalVideoStreamModel.swift */,
+				7A086D88286EF007003E348F /* VideoStreamModel.swift */,
+				7A086D89286EF007003E348F /* AzureVideoStreamModel.swift */,
+				7A086D8A286EF007003E348F /* AzureCallingModel.swift */,
+			);
+			path = VideoCall;
+			sourceTree = "<group>";
+		};
+		7A086D8D286EF007003E348F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D8E286EF007003E348F /* Chat */,
+				7A086D91286EF008003E348F /* VideoCall */,
+				7A086D96286EF008003E348F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A086D8E286EF007003E348F /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D8F286EF007003E348F /* ChatView.swift */,
+				7A086D90286EF008003E348F /* MessageView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		7A086D91286EF008003E348F /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D92286EF008003E348F /* StreamView.swift */,
+				7A086D93286EF008003E348F /* CallView.swift */,
+				7A086D94286EF008003E348F /* UIKitRepresentables */,
+			);
+			path = VideoCall;
+			sourceTree = "<group>";
+		};
+		7A086D94286EF008003E348F /* UIKitRepresentables */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D95286EF008003E348F /* VideoStreamView.swift */,
+			);
+			path = UIKitRepresentables;
+			sourceTree = "<group>";
+		};
+		7A086D97286EF008003E348F /* CallManager */ = {
+			isa = PBXGroup;
+			children = (
+				7A086D98286EF008003E348F /* ProviderDelegate.swift */,
+				7A086D99286EF008003E348F /* PushRegistryDelegate.swift */,
+				7A086D9A286EF008003E348F /* CallController.swift */,
+			);
+			path = CallManager;
+			sourceTree = "<group>";
+		};
+		CB0858F98189D8F2C6FC1F96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26456A3E6070310ABCD87D65 /* Pods_CommunicationFramework.framework */,
+				B4CD7D3F049C980C81AE3284 /* Pods_CommunicationFramework_CommunicationFrameworkTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +456,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A086D49286EEDF6003E348F /* Build configuration list for PBXNativeTarget "CommunicationFramework" */;
 			buildPhases = (
+				7253526E0D54BF1FDAD595BD /* [CP] Check Pods Manifest.lock */,
 				7A086D30286EEDF5003E348F /* Headers */,
 				7A086D31286EEDF5003E348F /* Sources */,
 				7A086D32286EEDF5003E348F /* Frameworks */,
@@ -121,9 +475,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A086D4C286EEDF6003E348F /* Build configuration list for PBXNativeTarget "CommunicationFrameworkTests" */;
 			buildPhases = (
+				A3DEC7C9DADC5B5CF287285C /* [CP] Check Pods Manifest.lock */,
 				7A086D3B286EEDF6003E348F /* Sources */,
 				7A086D3C286EEDF6003E348F /* Frameworks */,
 				7A086D3D286EEDF6003E348F /* Resources */,
+				6372A99E83375D61EF0A3FA9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,12 +545,127 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6372A99E83375D61EF0A3FA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CommunicationFramework-CommunicationFrameworkTests/Pods-CommunicationFramework-CommunicationFrameworkTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CommunicationFramework-CommunicationFrameworkTests/Pods-CommunicationFramework-CommunicationFrameworkTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommunicationFramework-CommunicationFrameworkTests/Pods-CommunicationFramework-CommunicationFrameworkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7253526E0D54BF1FDAD595BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CommunicationFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3DEC7C9DADC5B5CF287285C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CommunicationFramework-CommunicationFrameworkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7A086D31286EEDF5003E348F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A086DCA286EF008003E348F /* CallView.swift in Sources */,
+				7A086DBC286EF008003E348F /* ChatMessage+CoreDataClass.swift in Sources */,
+				7A086DC0286EF008003E348F /* AzureRemoteVideoStreamModel.swift in Sources */,
+				7A086DB3286EF008003E348F /* ChatViewModel.swift in Sources */,
+				7A086DAA286EF008003E348F /* FileRepresentable.swift in Sources */,
+				7A086DAF286EF008003E348F /* CallingModelDelegate.swift in Sources */,
+				7A086DA2286EF008003E348F /* ChatMessage.swift in Sources */,
+				7A086DB0286EF008003E348F /* CallingModel.swift in Sources */,
+				7A086DB4286EF008003E348F /* CallingViewModel.swift in Sources */,
+				7A086DA1286EF008003E348F /* View.swift in Sources */,
+				7A086DBF286EF008003E348F /* ChatStore.xcdatamodeld in Sources */,
+				7A086DB9286EF008003E348F /* AzureChatModel.swift in Sources */,
+				7A086DA6286EF008003E348F /* Encodable.swift in Sources */,
+				7A086DA7286EF008003E348F /* CallState.swift in Sources */,
+				7A086DA3286EF008003E348F /* ChatMessageReadReceipt.swift in Sources */,
+				7A086DA5286EF008003E348F /* ChatMessageReceivedEvent.swift in Sources */,
+				7A086DB5286EF008003E348F /* SnackBarViewModel.swift in Sources */,
+				7A086DAE286EF008003E348F /* ReceivedChatMessageResponse.swift in Sources */,
+				7A086DBB286EF008003E348F /* File+CoreDataClass.swift in Sources */,
+				7A086DB6286EF008003E348F /* CommunicationFramework.docc in Sources */,
+				7A086DC8286EF008003E348F /* MessageView.swift in Sources */,
+				7A086DAD286EF008003E348F /* ReadReceiptResponse.swift in Sources */,
+				7A086DA9286EF008003E348F /* HapticsManager.swift in Sources */,
+				7A086DC7286EF008003E348F /* ChatView.swift in Sources */,
+				7A086DA8286EF008003E348F /* UIImage.swift in Sources */,
+				7A086DCC286EF008003E348F /* ContentView.swift in Sources */,
+				7A086DB2286EF008003E348F /* SnackBarModifier.swift in Sources */,
+				7A086DC2286EF008003E348F /* VideoStreamModel.swift in Sources */,
+				7A086DA4286EF008003E348F /* ReadReceiptReceivedEvent.swift in Sources */,
+				7A086DB1286EF008003E348F /* ChatModelDelegate.swift in Sources */,
+				7A086DC1286EF008003E348F /* AzureLocalVideoStreamModel.swift in Sources */,
 				7A086D3A286EEDF5003E348F /* CommunicationFramework.docc in Sources */,
+				7A086DC5286EF008003E348F /* CommunicationUserTokenModel.swift in Sources */,
+				7A086DC3286EF008003E348F /* AzureVideoStreamModel.swift in Sources */,
+				7A086DAC286EF008003E348F /* FileStorage.swift in Sources */,
+				7A086DB7286EF008003E348F /* AmplifyFileStorage.swift in Sources */,
+				7A086DCE286EF008003E348F /* PushRegistryDelegate.swift in Sources */,
+				7A086DBD286EF008003E348F /* ChatMessage+CoreDataProperties.swift in Sources */,
+				7A086D9C286EF008003E348F /* FileType.swift in Sources */,
+				7A086DCB286EF008003E348F /* VideoStreamView.swift in Sources */,
+				7A086DC4286EF008003E348F /* AzureCallingModel.swift in Sources */,
+				7A086DA0286EF008003E348F /* Date.swift in Sources */,
+				7A086D9E286EF008003E348F /* ImagePicker.swift in Sources */,
+				7A086D9B286EF008003E348F /* PLHelper.swift in Sources */,
+				7A086DBE286EF008003E348F /* File+CoreDataProperties.swift in Sources */,
+				7A086D9F286EF008003E348F /* RoundedCorners.swift in Sources */,
+				7A086DC9286EF008003E348F /* StreamView.swift in Sources */,
+				7A086D9D286EF008003E348F /* ChatMessageStatus.swift in Sources */,
+				7A086DCF286EF008003E348F /* CallController.swift in Sources */,
+				7A086DCD286EF008003E348F /* ProviderDelegate.swift in Sources */,
+				7A086DB8286EF008003E348F /* PDFFile.swift in Sources */,
+				7A086DAB286EF008003E348F /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +810,7 @@
 		};
 		7A086D4A286EEDF6003E348F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A388D2F2F43CCBA6589B8F84 /* Pods-CommunicationFramework.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -347,6 +819,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -367,6 +840,7 @@
 		};
 		7A086D4B286EEDF6003E348F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FD40EA6DE725C7AF48CD01F /* Pods-CommunicationFramework.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -375,6 +849,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -395,7 +870,9 @@
 		};
 		7A086D4D286EEDF6003E348F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00CD1E72956A50C3442CA4DF /* Pods-CommunicationFramework-CommunicationFrameworkTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 78RSNDD442;
@@ -411,7 +888,9 @@
 		};
 		7A086D4E286EEDF6003E348F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1A180A8871D2500AFF935A5 /* Pods-CommunicationFramework-CommunicationFrameworkTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 78RSNDD442;
@@ -456,6 +935,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A086D83286EF007003E348F /* ChatStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A086D84286EF007003E348F /* ChatStore.xcdatamodel */,
+			);
+			currentVersion = 7A086D84286EF007003E348F /* ChatStore.xcdatamodel */;
+			path = ChatStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7A086D2C286EEDF5003E348F /* Project object */;
 }

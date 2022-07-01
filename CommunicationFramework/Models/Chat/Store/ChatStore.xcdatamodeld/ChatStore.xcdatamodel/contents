@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D5025f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ChatMessage" representedClassName="ChatMessage" syncable="YES">
+        <attribute name="chatMessageId" optional="YES" attributeType="String"/>
+        <attribute name="createdOn_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id_" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isInvalidated" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="message" optional="YES" attributeType="String"/>
+        <attribute name="senderIdentifier_" optional="YES" attributeType="String"/>
+        <attribute name="status_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="file" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="File" inverseName="message_" inverseEntity="File"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id_"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="File" representedClassName="File" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <attribute name="id_" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name_" optional="YES" attributeType="String"/>
+        <attribute name="type_" optional="YES" attributeType="String"/>
+        <relationship name="message_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChatMessage" inverseName="file" inverseEntity="ChatMessage"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id_"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="ChatMessage" positionX="-260.8148803710938" positionY="-9" width="128" height="149"/>
+        <element name="File" positionX="-74.2254638671875" positionY="-56.23165893554688" width="128" height="118"/>
+    </elements>
+</model>
