@@ -11,7 +11,7 @@ import AzureCommunicationCommon
 import AzureCommunicationChat
 import CoreData
 
-class ChatViewModel: NSObject, ObservableObject {
+public class ChatViewModel: NSObject, ObservableObject {
     
     @Published private var chatModel: ChatModel
     private var anyCancellable: AnyCancellable? = nil

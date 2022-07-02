@@ -60,7 +60,6 @@
 		7A086DC9286EF008003E348F /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D92286EF008003E348F /* StreamView.swift */; };
 		7A086DCA286EF008003E348F /* CallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D93286EF008003E348F /* CallView.swift */; };
 		7A086DCB286EF008003E348F /* VideoStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D95286EF008003E348F /* VideoStreamView.swift */; };
-		7A086DCC286EF008003E348F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D96286EF008003E348F /* ContentView.swift */; };
 		7A086DCD286EF008003E348F /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D98286EF008003E348F /* ProviderDelegate.swift */; };
 		7A086DCE286EF008003E348F /* PushRegistryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D99286EF008003E348F /* PushRegistryDelegate.swift */; };
 		7A086DCF286EF008003E348F /* CallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A086D9A286EF008003E348F /* CallController.swift */; };
@@ -132,7 +131,6 @@
 		7A086D92286EF008003E348F /* StreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
 		7A086D93286EF008003E348F /* CallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
 		7A086D95286EF008003E348F /* VideoStreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoStreamView.swift; sourceTree = "<group>"; };
-		7A086D96286EF008003E348F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7A086D98286EF008003E348F /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		7A086D99286EF008003E348F /* PushRegistryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushRegistryDelegate.swift; sourceTree = "<group>"; };
 		7A086D9A286EF008003E348F /* CallController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallController.swift; sourceTree = "<group>"; };
@@ -387,7 +385,6 @@
 			children = (
 				7A086D8E286EF007003E348F /* Chat */,
 				7A086D91286EF008003E348F /* VideoCall */,
-				7A086D96286EF008003E348F /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -639,7 +636,6 @@
 				7A086DA9286EF008003E348F /* HapticsManager.swift in Sources */,
 				7A086DC7286EF008003E348F /* ChatView.swift in Sources */,
 				7A086DA8286EF008003E348F /* UIImage.swift in Sources */,
-				7A086DCC286EF008003E348F /* ContentView.swift in Sources */,
 				7A086DB2286EF008003E348F /* SnackBarModifier.swift in Sources */,
 				7A086DC2286EF008003E348F /* VideoStreamModel.swift in Sources */,
 				7A086DA4286EF008003E348F /* ReadReceiptReceivedEvent.swift in Sources */,

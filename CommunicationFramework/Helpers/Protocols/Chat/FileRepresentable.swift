@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol FileRepresentable {
+public protocol FileRepresentable {
     
     var view: AnyView { get }
     var data: Data { get }

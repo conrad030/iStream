@@ -11,7 +11,7 @@ import PushKit
 import CallKit
 import AVFoundation
 
-class CallingViewModel: ObservableObject {
+public class CallingViewModel: ObservableObject {
     
     @Published private var callingModel: CallingModel
     private var anyCancellable: AnyCancellable? = nil
@@ -42,13 +42,6 @@ class CallingViewModel: ObservableObject {
         self.initPushRegistry()
         self.initProvider()
         self.requestAudioAndVideoPermission { _ in }
-    }
-    
-    public func linkModelToViewModel<Model: CallingModel & ObservableObject>(callingModel: Model) {
-        /// Has to be linked to AnyCancellable, so changes of the ObservableObject are getting detected
-        self.anyCancellable = callingModel.objectWillChange.sink { [weak self] _ in
-            self?.objectWillChange.send()
-        }
     }
     
     public func initCallingViewModel(identifier: String, displayName: String, token: String) {

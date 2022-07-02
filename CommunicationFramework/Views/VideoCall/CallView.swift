@@ -8,11 +8,11 @@
 import SwiftUI
 import Combine
 
-struct CallView: View {
+public struct CallView: View {
     
     @EnvironmentObject var callingViewModel: CallingViewModel
     
-    var body: some View {
+    public var body: some View {
         
         GeometryReader { outerGeometry in
             

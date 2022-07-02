@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChatView: View {
+public struct ChatView: View {
     
     @EnvironmentObject var chatViewModel: ChatViewModel
     @StateObject var snackBarViewModel = SnackBarViewModel()
@@ -38,7 +38,7 @@ struct ChatView: View {
         return nil
     }
     
-    var body: some View {
+    public var body: some View {
         
         VStack(spacing: 0) {
             
