@@ -12,6 +12,8 @@ public struct CallView: View {
     
     @EnvironmentObject var callingViewModel: CallingViewModel
     
+    public init() {}
+    
     public var body: some View {
         
         GeometryReader { outerGeometry in

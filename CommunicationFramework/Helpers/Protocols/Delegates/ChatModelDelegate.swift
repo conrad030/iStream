@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ChatModelDelegate {
+public protocol ChatModelDelegate {
     func handleChatMessageReceived(event: ReceivedChatMessageResponse)
     func handleReadReceipt(event: ReadReceiptResponse)
     func handleGetThreadMessages(items: [ReceivedChatMessageResponse])

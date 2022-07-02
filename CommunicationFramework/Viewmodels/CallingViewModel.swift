@@ -31,7 +31,7 @@ public class CallingViewModel: ObservableObject {
     
     @Published public var displayName: String?
         
-    init<Model: CallingModel & ObservableObject>(callingModel: Model) {
+    public init<Model: CallingModel & ObservableObject>(callingModel: Model) {
         self.callingModel = callingModel
         self.callingModel.delegate = self
         /// Has to be linked to AnyCancellable, so changes of the ObservableObject are getting detected

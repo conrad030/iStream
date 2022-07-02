@@ -38,6 +38,8 @@ public struct ChatView: View {
         return nil
     }
     
+    public init() {}
+    
     public var body: some View {
         
         VStack(spacing: 0) {

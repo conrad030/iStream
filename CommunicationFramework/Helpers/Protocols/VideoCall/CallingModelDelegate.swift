@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol CallingModelDelegate {
+public protocol CallingModelDelegate {
     func pushNotificationsRegistered()
     func muteCall(callId: UUID, mute: Bool)
     func toggleMuteSucceeded(with mute: Bool)

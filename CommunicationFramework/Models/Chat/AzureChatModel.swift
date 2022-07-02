@@ -12,7 +12,7 @@ import CoreText
 
 public class AzureChatModel: ObservableObject, ChatModel {
     
-    var delegate: ChatModelDelegate?
+    public var delegate: ChatModelDelegate?
     
     private var displayName: String = ""
     private var identifier: String = ""

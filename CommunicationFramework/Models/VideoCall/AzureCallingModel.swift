@@ -12,7 +12,7 @@ import PushKit
 
 public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
     
-    var delegate: CallingModelDelegate?
+    public var delegate: CallingModelDelegate?
     
     private var callClient: CallClient = CallClient()
     private var callAgent: CallAgent?
@@ -249,8 +249,7 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
         }
     }
     
-    // TODO: Sauberer und unabhängig implementieren
-    func startVideo() {
+    public func startVideo() {
         if let localVideoStreamModel = self.azureLocalVideoStreamModel, let call = self.call, let localVideoStream = self.localVideoStream {
             call.startVideo(stream: localVideoStream) { error in
                 if error != nil {

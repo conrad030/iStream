@@ -8,7 +8,7 @@
 import Foundation
 import PushKit
 
-protocol CallingModel {
+public protocol CallingModel {
     var delegate: CallingModelDelegate? { get set }
     var localVideoStreamModel: VideoStreamModel? { get }
     var remoteVideoStreamModel: VideoStreamModel? { get }

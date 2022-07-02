@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ChatModel {
+public protocol ChatModel {
     var delegate: ChatModelDelegate? { get set }
     var threadId: String? { get }
     var completedMessageFetch: Bool { get }

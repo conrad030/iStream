@@ -33,7 +33,7 @@ public class ChatViewModel: NSObject, ObservableObject {
     }
     @Published private(set) var initFinished = false
     
-    init<Model: ChatModel & ObservableObject>(chatModel: Model, context: NSManagedObjectContext? = nil) {
+    public init<Model: ChatModel & ObservableObject>(chatModel: Model, context: NSManagedObjectContext? = nil) {
         self.chatModel = chatModel
         if let context = context {
             self.context = context
