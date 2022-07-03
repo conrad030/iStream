@@ -44,6 +44,8 @@ public class AzureChatModel: ObservableObject, ChatModel {
     
     @Published public var completedMessageFetch = false
     
+    public init() {}
+    
     public func initChatModel(endpoint: String, identifier: String, token: String, displayName: String) throws {
         self.displayName = displayName
         self.identifier = identifier
