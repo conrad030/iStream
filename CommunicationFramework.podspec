@@ -22,9 +22,9 @@ s.dependency 'Amplify'
 s.dependency 'AmplifyPlugins/AWSS3StoragePlugin'
 s.dependency 'AmplifyPlugins/AWSCognitoAuthPlugin'
 
-s.source_files = "CommunicationFramework/**/*.{swift}"
+s.source_files = "Sources/CommunicationFramework/**/*.{swift}"
 
-s.resources = "CommunicationFramework/**/*.{png,jpeg,jpg,xcassets,xcdatamodeld}"
+s.resources = "Sources/CommunicationFramework/**/*.{png,jpeg,jpg,xcassets,xcdatamodeld}"
 
 s.swift_version = "5.0"
 
