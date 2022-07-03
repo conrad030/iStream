@@ -6,7 +6,7 @@ s.name = "CommunicationFramework"
 s.summary = "Integrate Video Call and Chat in your project within a few lines of code."
 s.requires_arc = true
 
-s.version = "0.1.0"
+s.version = "0.1.1"
 
 s.license = { :type => "MIT", :file => "LICENSE" }
 
