@@ -38,7 +38,10 @@ public class ChatViewModel: NSObject, ObservableObject {
         if let context = context {
             self.context = context
         } else {
-            let container = NSPersistentContainer(name: "ChatStore")
+            let modelURL = Bundle(for: ChatViewModel.self).url(forResource: "ChatStore", withExtension: "momd")
+            let model = modelURL.flatMap(NSManagedObjectModel.init)!
+            
+            let container = NSPersistentContainer(name: "ChatStore", managedObjectModel: model)
             container.loadPersistentStores { description, error in
                 if let error = error {
                     print("Core Data failed to load: \(error.localizedDescription)")

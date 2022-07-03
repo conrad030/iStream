@@ -14,8 +14,11 @@ class ChatViewModelTests: XCTestCase {
     var sut: ChatViewModel!
     var mock: MockChatModel = MockChatModel()
     lazy var testContext: NSManagedObjectContext = {
-        let container = NSPersistentContainer(name: "ChatStore")
-        container.persistentStoreDescriptions[0].url = URL(fileURLWithPath: "/dev/null")
+        let modelURL = Bundle(for: ChatViewModel.self).url(forResource: "ChatStore", withExtension: "momd")
+        let model = modelURL.flatMap(NSManagedObjectModel.init)!
+        
+        let container = NSPersistentContainer(name: "ChatStore", managedObjectModel: model)
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: URL(fileURLWithPath: "/dev/null"))]
         container.loadPersistentStores { description, error in
             XCTAssertNil(error)
         }
