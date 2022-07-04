@@ -11,7 +11,7 @@ import Combine
 import Amplify
 import AmplifyPlugins
 
-public class AmplifyFileStorage: FileStorage {
+public class AmplifyFileStorage {
     
     private var resultSink: AnyCancellable?
     private var progressSink: AnyCancellable?
@@ -26,8 +26,11 @@ public class AmplifyFileStorage: FileStorage {
             print("Failed to initialize Amplify with \(error)")
         }
     }
+}
+
+extension AmplifyFileStorage: FileStorage {
     
-    /// Upload a file to a S3 Bucket
+    /// Upload file to a S3 Bucket
     public func uploadFile(key: String, data: Data, completion: @escaping (String?, Error?) -> Void) {
         let storageOperation = Amplify.Storage.uploadData(key: key, data: data)
         self.progressSink = storageOperation
@@ -48,6 +51,7 @@ public class AmplifyFileStorage: FileStorage {
             }
     }
     
+    /// Get  file to a S3 Bucket
     public func getFile(for id: String, completion: @escaping (Data?, Error?) -> Void) {
         let storageOperation = Amplify.Storage.downloadData(key: id)
         self.progressSink = storageOperation.progressPublisher.sink { progress in print("Progress: \(progress)") }
@@ -62,6 +66,7 @@ public class AmplifyFileStorage: FileStorage {
         })
     }
     
+    /// Delete file to a S3 Bucket
     public func deleteFile(for id: String, completion: @escaping (String?, Error?) -> Void) {
         self.resultSink = Amplify.Storage.remove(key: id).resultPublisher.sink(receiveCompletion: {
             if case let .failure(storageError) = $0 {

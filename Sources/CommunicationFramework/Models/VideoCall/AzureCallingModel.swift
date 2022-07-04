@@ -22,10 +22,7 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
     public var voipToken: Data?
     private var localVideoStream: LocalVideoStream?
     
-    private var displayName: String = ""
-    private var identifier: String = ""
-    
-    @Published public var callState: CallState = CallState.none
+    @Published private var callState: CallState = CallState.none
     @Published private var azureLocalVideoStreamModel: AzureLocalVideoStreamModel?
     public var localVideoStreamModel: VideoStreamModel? {
         self.azureLocalVideoStreamModel
@@ -35,9 +32,6 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
         self.azureRemoteVideoStreamModel
     }
     @Published public var incomingCallPushNotification: PushNotificationInfo?
-    @Published public var isMicrophoneMuted: Bool = false
-    @Published public var isLocalVideoStreamEnabled: Bool = false
-    @Published public var callViewModelInitialized: Bool = false
     
     private var communicationUserToken: CommunicationUserTokenModel?
     
@@ -45,7 +39,7 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
         self.callAgent != nil
     }
     
-    private var hasLocalVideoStreams: Bool {
+    private var hasLocalVideoStream: Bool {
         self.localVideoStream != nil
     }
     
@@ -53,9 +47,7 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
     
     public func initCallingModel(identifier: String, token: String, displayName: String) {
         if !self.hasCallAgent {
-            self.identifier = identifier
-            self.displayName = displayName
-            self.communicationUserToken = CommunicationUserTokenModel(token: token, expiresOn: nil, communicationUserId: identifier, displayName: displayName)
+            self.communicationUserToken = CommunicationUserTokenModel(token: token, communicationUserId: identifier, displayName: displayName)
             self.initCallAgent(communicationUserTokenModel: self.communicationUserToken!) { success in
                 if !success {
                     print("callAgent not intialized.\n")
@@ -65,32 +57,27 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
     }
     
     private func initCallAgent(communicationUserTokenModel: CommunicationUserTokenModel, completion: @escaping (Bool) -> Void) {
-        if let communicationUserId = communicationUserTokenModel.communicationUserId,
-           let token = communicationUserTokenModel.token {
-            do {
-                let communicationTokenCredential = try CommunicationTokenCredential(token: token)
-                let callAgentOptions = CallAgentOptions()
-                callAgentOptions.displayName = communicationUserTokenModel.displayName ?? communicationUserId
-                self.callClient.createCallAgent(userCredential: communicationTokenCredential, options: callAgentOptions) { (callAgent, error) in
-                    print("CallAgent successfully created.\n")
-                    if self.callAgent != nil {
-                        print("\nsomething went wrhong with lifecycle.\n")
-                        self.callAgent?.delegate = nil
-                    }
-                    self.callAgent = callAgent
-                    self.callAgent?.delegate = self
-                    
-                    if let token = self.voipToken {
-                        self.registerPushNotifications(voipToken: token)
-                    }
-                    completion(true)
+        do {
+            let communicationTokenCredential = try CommunicationTokenCredential(token: communicationUserTokenModel.token)
+            let callAgentOptions = CallAgentOptions()
+            callAgentOptions.displayName = communicationUserTokenModel.displayName
+            self.callClient.createCallAgent(userCredential: communicationTokenCredential, options: callAgentOptions) { (callAgent, error) in
+                print("CallAgent successfully created.\n")
+                if self.callAgent != nil {
+                    print("\nsomething went wrhong with lifecycle.\n")
+                    self.callAgent?.delegate = nil
                 }
-            } catch {
-                print("Error: \(error.localizedDescription)")
-                completion(false)
+                self.callAgent = callAgent
+                self.callAgent?.delegate = self
+                
+                if let token = self.voipToken {
+                    self.registerPushNotifications(voipToken: token)
+                }
+                completion(true)
             }
-        } else {
-            print("Invalid communicationUserTokenModel.\n")
+        } catch {
+            print("Error: \(error.localizedDescription)")
+            completion(false)
         }
     }
     
@@ -179,7 +166,7 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
                 }
                 callAgent.startCall(participants: callees, options: startCallOptions) { call, error in
                     // TODO: withVideo muss noch anders gehandlet werden
-                    self.startCallCompletion(call: call, error: error, withVideo: self.hasLocalVideoStreams)
+                    self.startCallCompletion(call: call, error: error, withVideo: self.hasLocalVideoStream)
                 }
                 print("Outgoing call started.")
             }
@@ -351,7 +338,7 @@ public class AzureCallingModel: NSObject, ObservableObject, CallingModel {
                 
                 if let videoDeviceInfo: VideoDeviceInfo = deviceManager?.cameras.first {
                     self.localVideoStream = LocalVideoStream(camera: videoDeviceInfo)
-                    self.azureLocalVideoStreamModel = AzureLocalVideoStreamModel(identifier: self.identifier, displayName: self.displayName)
+                    self.azureLocalVideoStreamModel = AzureLocalVideoStreamModel(identifier: self.communicationUserToken?.communicationUserId ?? "", displayName: self.communicationUserToken?.displayName ?? "")
                     print("LocalVideoStream instance initialized.")
                     completion(true)
                 } else {
@@ -395,7 +382,6 @@ extension AzureCallingModel: CallAgentDelegate {
             self.call = addedCall
             self.call?.delegate = self
             self.callState = addedCall.state
-            self.isMicrophoneMuted = addedCall.isMuted
             self.hasIncomingCall?(true)
         }
         

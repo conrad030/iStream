@@ -110,7 +110,7 @@ public class CallingViewModel: ObservableObject {
         self.callingModel.unmute()
     }
     
-    public func handlePushNotification(payload: PKPushPayload) {
+    private func handlePushNotification(payload: PKPushPayload) {
         self.callingModel.handlePushNotification(payload: payload)
     }
     

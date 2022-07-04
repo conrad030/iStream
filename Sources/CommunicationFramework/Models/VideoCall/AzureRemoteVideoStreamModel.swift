@@ -11,11 +11,9 @@
 import SwiftUI
 import AzureCommunicationCalling
 
-public class AzureRemoteVideoStreamModel: AzureVideoStreamModel, RemoteParticipantDelegate {
+public class AzureRemoteVideoStreamModel: AzureVideoStreamModel {
     
-    @Published public var isRemoteVideoStreamEnabled:Bool = false
-    @Published public var isMicrophoneMuted:Bool = false
-    @Published public var isSpeaking:Bool = false
+    @Published public var isMicrophoneMuted: Bool = false
     @Published public var scalingMode: ScalingMode = .crop
 
     public var remoteParticipant: RemoteParticipant?
@@ -25,7 +23,6 @@ public class AzureRemoteVideoStreamModel: AzureVideoStreamModel, RemoteParticipa
         super.init(identifier: identifier, displayName: displayName)
         self.remoteParticipant!.delegate = self
         self.isMicrophoneMuted = false
-        self.isSpeaking = false
         self.checkStream()
     }
 
@@ -42,7 +39,6 @@ public class AzureRemoteVideoStreamModel: AzureVideoStreamModel, RemoteParticipa
             let renderer = try VideoStreamRenderer(remoteVideoStream: remoteVideoStream)
             self.renderer = renderer
             self.videoStreamView = VideoStreamView(view: (try renderer.createView()))
-            self.isRemoteVideoStreamEnabled = true
             print("Remote VideoStreamView started!")
         } catch {
             print("Failed starting VideoStreamView for \(String(describing: displayName)) : \(error.localizedDescription)")
@@ -57,6 +53,9 @@ public class AzureRemoteVideoStreamModel: AzureVideoStreamModel, RemoteParticipa
             print("Removed remote VideoStreamView.")
         }
     }
+}
+
+extension AzureRemoteVideoStreamModel: RemoteParticipantDelegate {
     
     public func remoteParticipant(_ remoteParticipant: RemoteParticipant, didChangeState args: PropertyChangedEventArgs) {
         print("\n-------------------------")
@@ -76,7 +75,6 @@ public class AzureRemoteVideoStreamModel: AzureVideoStreamModel, RemoteParticipa
         print("\n-------------------")
         print("onIsSpeakingChanged")
         print("-------------------\n")
-        self.isSpeaking = remoteParticipant.isSpeaking
         print("remoteParticipant.isSpeaking: \(remoteParticipant.isSpeaking)")
     }
     
@@ -96,7 +94,6 @@ public class AzureRemoteVideoStreamModel: AzureVideoStreamModel, RemoteParticipa
         print("RemovedStreams: \(args.removedRemoteVideoStreams.count)")
         if let stream = args.removedRemoteVideoStreams.first {
             self.removeStream(stream: stream)
-            self.isRemoteVideoStreamEnabled = false
         }
     }
     
@@ -108,4 +105,3 @@ public class AzureRemoteVideoStreamModel: AzureVideoStreamModel, RemoteParticipa
         print("remoteParticipant.isMuted: \(remoteParticipant.isMuted)")
     }
 }
-
