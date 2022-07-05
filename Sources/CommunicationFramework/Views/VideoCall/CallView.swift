@@ -8,11 +8,18 @@
 import SwiftUI
 import Combine
 
-public struct CallView: View {
+public struct CallView<VideoContent: View, SpeakerContent: View, HangupContent: View>: View {
     
     @EnvironmentObject var callingViewModel: CallingViewModel
+    private var videoButtonLabel: VideoContent
+    private var speakerButtonLabel: SpeakerContent
+    private var hangupButtonLabel: HangupContent
     
-    public init() {}
+    public init(@ViewBuilder videoButtonLabel: @escaping () -> VideoContent, @ViewBuilder speakerButtonLabel: @escaping () -> SpeakerContent, @ViewBuilder hangupButtonLabel: @escaping () -> HangupContent) {
+        self.videoButtonLabel = videoButtonLabel()
+        self.speakerButtonLabel = speakerButtonLabel()
+        self.hangupButtonLabel = hangupButtonLabel()
+    }
     
     public var body: some View {
         
@@ -56,17 +63,26 @@ public struct CallView: View {
                         Button {
                             self.callingViewModel.toggleVideo()
                         } label: {
-                            HStack {
-                                Spacer()
-                                if self.callingViewModel.localVideoStreamModel?.videoStreamView != nil {
-                                    Image(systemName: "video")
-                                        .padding()
-                                } else {
-                                    Image(systemName: "video.slash")
-                                        .padding()
+                                HStack {
+                                    
+                                    Spacer()
+                                    
+                                    if self.videoButtonLabel is EmptyView {
+                                        
+                                        if self.callingViewModel.localVideoStreamModel?.videoStreamView != nil {
+                                            Image(systemName: "video")
+                                                .padding()
+                                        } else {
+                                            Image(systemName: "video.slash")
+                                                .padding()
+                                        }
+                                    } else {
+                                        
+                                        self.videoButtonLabel
+                                    }
+                                    
+                                    Spacer()
                                 }
-                                Spacer()
-                            }
                         }
                         
                         Button {
@@ -77,14 +93,20 @@ public struct CallView: View {
                                 
                                 Spacer()
                                 
-                                if self.callingViewModel.isMuted {
+                                if self.speakerButtonLabel is EmptyView {
                                     
-                                    Image(systemName: "speaker.slash")
-                                        .padding()
+                                    if self.callingViewModel.isMuted {
+                                        
+                                        Image(systemName: "speaker.slash")
+                                            .padding()
+                                    } else {
+                                        
+                                        Image(systemName: "speaker.wave.2")
+                                            .padding()
+                                    }
                                 } else {
                                     
-                                    Image(systemName: "speaker.wave.2")
-                                        .padding()
+                                    self.speakerButtonLabel
                                 }
                                 
                                 Spacer()
@@ -99,9 +121,15 @@ public struct CallView: View {
                                 
                                 Spacer()
                                 
-                                Image(systemName: "phone.down")
-                                    .foregroundColor(.red)
-                                    .padding()
+                                if self.hangupButtonLabel is EmptyView {
+                                    
+                                    Image(systemName: "phone.down")
+                                        .foregroundColor(.red)
+                                        .padding()
+                                } else {
+                                    
+                                    self.hangupButtonLabel
+                                }
                                 
                                 Spacer()
                             }
@@ -124,5 +152,11 @@ struct CallView_Previews: PreviewProvider {
     static var previews: some View {
         CallView()
             .environmentObject(CallingViewModel(callingModel: AzureCallingModel()))
+    }
+}
+
+extension CallView where VideoContent == EmptyView, SpeakerContent == EmptyView, HangupContent == EmptyView  {
+    public init() {
+        self.init(videoButtonLabel: { EmptyView() }, speakerButtonLabel: { EmptyView() }, hangupButtonLabel: { EmptyView() })
     }
 }

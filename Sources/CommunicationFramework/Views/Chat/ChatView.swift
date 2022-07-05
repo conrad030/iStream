@@ -9,9 +9,37 @@ import SwiftUI
 
 public struct ChatView: View {
     
+    public init() {}
+    
+    public var body: some View {
+        
+        ChatViewBase {
+            
+            MessageView(chatMessage: $0)
+        }
+    }
+}
+
+public struct CustomChatView<Content: View>: View {
+    
+    private var messageView: (ChatMessage) -> Content
+    
+    public init(@ViewBuilder messageView: @escaping (ChatMessage) -> Content) {
+        self.messageView = messageView
+    }
+    
+    public var body: some View {
+        
+        ChatViewBase<Content>(messageView: { self.messageView($0) })
+    }
+}
+
+struct ChatViewBase<Content: View>: View {
+    
     @EnvironmentObject var chatViewModel: ChatViewModel
     @StateObject var snackBarViewModel = SnackBarViewModel()
     
+    private var messageView: (ChatMessage) -> Content?
     @State private var message = ""
     private var dates: [Date] {
         var dates: [Date] = []
@@ -38,9 +66,11 @@ public struct ChatView: View {
         return nil
     }
     
-    public init() {}
+    init(@ViewBuilder messageView: @escaping (ChatMessage) -> Content?) {
+        self.messageView = messageView
+    }
     
-    public var body: some View {
+    var body: some View {
         
         VStack(spacing: 0) {
             
@@ -63,7 +93,7 @@ public struct ChatView: View {
                                 
                                 ForEach(self.chatViewModel.chatMessages.filter { $0.createdOn.isSameDay(as: date) }.sorted { $0.createdOn.compare($1.createdOn) == .orderedAscending }) { message in
                                     
-                                    MessageView(chatMessage: message)
+                                    self.messageView(message)
                                         .id(message.id)
                                 }
                             }
