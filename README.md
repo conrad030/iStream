@@ -1,9 +1,9 @@
 
-# Welcome to CommunicationFramework!
+# Welcome to iStream!
 
   
 
-This SwiftUI Framework allows you to add Video Call and Chat to your project within a few lines of code. To use this Framework, you'll need an iOS 15 project. Currently, only Azure Communication Services with a AWS Amplify S§ storage is supported by the framework, but in the future other options are planned.
+This SwiftUI Framework allows you to add Video Call and Chat to your project within a few lines of code. To use this Framework, you'll need an iOS 15 project. Currently, only Azure Communication Services with a AWS Amplify S3 storage is supported by the framework, but in the future other options are planned.
 
   
 
@@ -13,7 +13,7 @@ To use the framework via Cocoapods, add the following line to your Podfile:
 
 ```
 
-pod CommunicationFramework, "~> 0.1.3"
+pod iStream, "~> 0.2.0"
 
 ```
 
@@ -81,7 +81,7 @@ First, import the framework module inside your \<YourApp\>App.swift:
 
 ```
 
-import CommunicationFramework
+import iStream
 
 ```
 
@@ -103,7 +103,7 @@ Then add the viewmodel as an environment object on your root view:
 
 After the Viewmodel is initialized, you have to setup the Viewmodel with the ``initCallingViewModel(identifier:displayName:token:)`` function. To generate an identifier and a token for the ACS resource, you can use the Azure plattform or implement an own server. Infos about implementing an own server can the found [here](https://docs.microsoft.com/de-de/azure/communication-services/quickstarts/access-tokens?pivots=programming-language-javascript).
 
-After your viewmodel is initialized, you're ready to make some Video Calls. To start a call, use the ``self.callingViewModel.startCall(identifier:)`` function of the CallingViewModel, where ``identifier``should be an existing identifier from your ACS resource. The property ``presentCallView: Bool`` in CallingViewModel is set to ``true`` when a call successfully started. With this info, you can use the CallView view, to display the UI. Alternative you can implement own Views to display the UI by using the CallingViewModel instance.
+After your viewmodel is initialized, you're ready to make some Video Calls. To start a call, use the ``self.callingViewModel.startCall(identifier:)`` function of the CallingViewModel, where ``identifier``should be an existing identifier from your ACS resource. The property ``presentCallView: Bool`` in CallingViewModel is set to ``true`` when a call successfully started. With this info, you can use the CallView view, to display the UI. If you want to add custom buttons in the CallView, you can add them in the initializer. Alternative you can implement own Views to display the UI by using the CallingViewModel instance.
 
 _Note: The CallView should get the viewmodel passed as an environmentObject with ``.environmentObject(self.callingViewModel)``._
 
@@ -115,7 +115,7 @@ To use the Chat feature, import the framework module in your \<YourApp\>App.swif
 
 ```
 
-import CommunicationFramework
+import iStream
 
 ```
 
@@ -137,6 +137,6 @@ After that, declare and initialize the ChatViewModel...
 
 To use the Viewmodel, initialize the chat feature with the ``self.chatViewModel.initChatViewModel(identifier:displayName:endpoint:token:)`` function. To generate an identifier and a token for the ACS resource, you can use the Azure plattform or implement an own server. Infos about implementing an own server can the found [here](https://docs.microsoft.com/de-de/azure/communication-services/quickstarts/access-tokens?pivots=programming-language-javascript). The endpoint parameter is the Endpoint from your ACS resource, which can be found under Settings > Keys in your resource infos in Azure portal.
 
-After your viewmodel is setup, you can use the ``self.chatViewModel.startChat(with:partnerDisplayName:)`` function, where ``identifier``should be an existing identifier from your ACS resource. The ``chatIsSetup: Bool`` property is set to ``true`` when the chat view can be displayed. You can use this info to show the ChatView, to display the UI. Alternative you can implement own Views to display the UI by using the ChatViewModel instance.
+After your viewmodel is setup, you can use the ``self.chatViewModel.startChat(with:partnerDisplayName:)`` function, where ``identifier``should be an existing identifier from your ACS resource. The ``chatIsSetup: Bool`` property is set to ``true`` when the chat view can be displayed. You can use this info to show the ChatView, to display the UI. If you want to add a custom message view, you can add it in the initializer. Alternative you can implement own Views to display the UI by using the ChatViewModel instance.
 
 _Note: The ChatView should get the viewmodel passed as an environmentObject with ``.environmentObject(self.chatViewModel)``._
