@@ -87,10 +87,4 @@ class CallingViewModelTests: XCTestCase {
         XCTAssertTrue(self.mock.unmuteCalled, "unmute function in mock not called")
         XCTAssertFalse(self.sut.isMuted, "sut is still muted")
     }
-    
-    func testHandlePushNotification() {
-        let payload = PKPushPayload()
-        self.sut.handlePushNotification(payload: payload)
-        XCTAssertTrue(self.mock.handlePushNotificationCalled, "handlePushNotification in mock not called")
-    }
 }
