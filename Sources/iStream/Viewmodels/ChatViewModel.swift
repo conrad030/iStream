@@ -31,7 +31,7 @@ public class ChatViewModel: NSObject, ObservableObject {
     public var loadedMessages: Bool {
         return self.chatModel.completedMessageFetch
     }
-    @Published private(set) var initFinished = false
+    @Published public var initFinished = false
     
     public init<Model: ChatModel & ObservableObject>(chatModel: Model, context: NSManagedObjectContext? = nil) {
         self.chatModel = chatModel
